@@ -1,7 +1,12 @@
 body{
     background-color: #6096B4;
+    
+    
+    
 }
-
+h1{
+    font-family: 'Kalam', cursive;
+}
 
 /*Estilos del Header*/
 
@@ -13,8 +18,8 @@ body{
     
 }
 .encabezado img{
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -24,10 +29,9 @@ body{
 
 .menu{
     background-color: #93BFCF;
-    text-align: center;
-    border-radius: 15px;
+    text-align: center;    
     grid-area: inicio;
-    height: 100px;
+    height: 120px;
    
    
 }
@@ -54,6 +58,8 @@ body{
     background-size:40px;
     background-repeat: no-repeat;
     padding-left: 2em; 
+    font-family: 'Kalam', cursive;
+   
     
 }
 
@@ -72,6 +78,19 @@ body{
     50%{transform: scaleX(1.5);}
     100%{transform: scaleX(1.0);}
 }
+
+
+/*Formato del contenido principal*/
+
+.contenedor{
+    display: grid;
+    grid-template: auto,auto,auto,auto,auto/ auto auto ;
+    grid-template-areas: "header header"
+                          "inicio inicio"
+                          "titulo titulo"
+                          "parrafo imagenes"                                                  
+                          "pie pie " ;
+}
 /*Estilos del Titulo*/
 
 div .titulo {
@@ -82,75 +101,50 @@ div .titulo {
     width: 100%;    
     justify-content: center;
     grid-area: titulo;
+    
 }
 div .titulo h1:hover{
 
     box-shadow: 10px 0px 30px rgba(163, 163 ,163,1 )
 }
-
-/*Formato del contenido principal*/
-
-.contenedor{
-    display: grid;
-    grid-template: repeat(6,auto)/ auto auto ;
-    grid-template-areas: "header header"
-                          "inicio inicio"
-                          "titulo titulo"
-                          "articulo1 articulo1"
-                          "articulo2 articulo2"
-                          "pie pie " ;
-}
-
-.contenido{
-    display: inline-flex;
-    align-items: flex-start;
-    grid-area: articulo1;
-
-    
-}
+/*Contenido principal----------------------------*/
+article .contenido__articulo{
+    display:flex;
    
-
-.contenedor-articulo h3{
-    color: darkblue;
-    font-size: 35px;
-}
-.contenedor-articulo p{
-    color: darkblue;
-    font-size: 25px;
-}
-.contenedor-articulo div{
-    margin: 10px;
-}
-.contenedor-articulo img{
-    width: 30%;
     
 }
 
-article .segundo-contenido{
+.contenedor_presentacion {    
+    height: 100%;
     display: flex;
-    grid-area: articulo2;
+    flex-direction: column;
+    
+    grid-area: parrafo;
 }
-.contenedor-articulo2{
+.contenedor_presentacion p{
+    font-size: 20px;
+    color: #011318;
+}
+.contendedor__img-p{
     display: flex;
-    padding: 10px;
+
+}
+.contenedor_presentacion img{
+    
+    width: 40%;
+    height: 60%;
+}
+.contenedor__imagenes{
+    display: flex;
+    flex-direction: column;
+    grid-area: imagenes;
     width: 100%;
-    overflow: hidden;
     
 }
-.contenedor-articulo2 h3{
-    color:darkblue;
-    font-size: 35px;
+.contenedor__imagenes img{
+    width: 100%;
 }
-.contenedor-articulo2 p{
-    color: darkblue;
-    font-size: 25px;
-}
-.contenedor-articulo2 div{
-    margin: 10px;
-}
-.contenedor-articulo2 img{
-    width: 700px;
-}
+
 
 
 /*Formato del contenido pie de pagina FOOTER*/
@@ -187,4 +181,20 @@ footer p{
     color: #fff;
     margin-left:3px ;
     align-items: end;
+}
+/* Implementacion de mediaqueries----------------------------------------------*/
+@media screen and (max-width:800px){
+    .contenedor{
+        display: grid;
+        grid-template: auto/ auto ;
+        grid-template-areas: "header "
+                              "inicio "
+                              "titulo "
+                              "parrafo "
+                              "imagenes "                                                  
+                              "pie  " ;
+    }
+    
+
+
 }
