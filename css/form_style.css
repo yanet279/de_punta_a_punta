@@ -106,9 +106,10 @@ div .titulo h1:hover{
 
 .formulario{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;    
+    left: 20px;
     grid-area: formulario;
+    padding-left: 20px;
 }
 .formulario__label{
     display: block;

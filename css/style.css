@@ -85,10 +85,10 @@ h1{
 .contenedor{
     display: grid;
     grid-template: auto,auto,auto,auto,auto/ auto auto ;
-    grid-template-areas: "header header"
+    grid-template-areas:  "header header"
                           "inicio inicio"
                           "titulo titulo"
-                          "parrafo imagenes"                                                  
+                          "contenido fotogaleria"                                                  
                           "pie pie " ;
 }
 /*Estilos del Titulo*/
@@ -110,39 +110,43 @@ div .titulo h1:hover{
 /*Contenido principal----------------------------*/
 article .contenido__articulo{
     display:flex;
-   
-    
-}
-
-.contenedor_presentacion {    
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    
-    grid-area: parrafo;
-}
-.contenedor_presentacion p{
-    font-size: 20px;
-    color: #011318;
-}
-.contendedor__img-p{
-    display: flex;
-
-}
-.contenedor_presentacion img{
-    
+    grid-area: contenido;
     width: 40%;
-    height: 60%;
+
 }
-.contenedor__imagenes{
-    display: flex;
-    flex-direction: column;
-    grid-area: imagenes;
+.parrafo__presentacion{
+    display: absolute;
+    margin-left: 12%;
     width: 100%;
-    
 }
-.contenedor__imagenes img{
-    width: 100%;
+.contenido__articulo p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: #063642;
+}
+
+img.flotante_salinas,
+img.flotante_desert {
+    width: 30%;
+    float: right;
+    margin: 2px 3px;
+}
+img.flotante_cataratas{
+    width: 30%;
+    float: left;
+    margin: 2px 3px;
+}
+.galeria__pais{
+    display: flex;    
+    flex-direction:column;
+    align-items: flex-end;    
+    grid-area: fotogaleria;
+   
+   
+}
+.galeria__pais .imagenes{
+    width: 70%;
+    float: center;
 }
 
 
@@ -190,8 +194,8 @@ footer p{
         grid-template-areas: "header "
                               "inicio "
                               "titulo "
-                              "parrafo "
-                              "imagenes "                                                  
+                              "contenido "
+                              "fotogaleria "                                                  
                               "pie  " ;
     }
     
