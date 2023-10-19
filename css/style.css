@@ -1,8 +1,6 @@
 body{
     background-color: #6096B4;
     margin: 0;
-    box-sizing: border-box;
-
 }
 h1{
     font-family: 'Kalam', cursive;
@@ -27,13 +25,21 @@ h1{
 .logo {
     font-size: 45px;
     font-weight: bold;
-    padding-bottom: 25px;
-    padding-top: 20px;
+    /* padding-bottom: 25px; */
+    padding-top: 10px;
+    text-align: start;
+}
+
+.logo-img {
+    /* border: 1px solid; */
+    width: 280px;
+    margin-left: 15px;
 }
 
 @media (min-width:910px) {
     .logo {
         padding-bottom: 0;
+        text-align: center;
     }
 }
 
@@ -42,12 +48,13 @@ h1{
     text-align: center;    
     grid-area: inicio;
     font-family: 'Kalam', cursive;
-    margin-bottom: -15px;
+    margin-bottom: -5px;
 }
 
 .menu ul{
     list-style: none;
     padding: 0 30px;
+    margin-top: 0;
 }
 
 @media (max-width: 910px) {
@@ -103,7 +110,7 @@ h1{
 
 div .titulo {
     display: inline-flex;
-    color: #C08261;
+    color: #e4c9ba;
     background-image: linear-gradient(to bottom, #0a5c71, #063642);
     border: #063642 2px solid;
     width: 100%;    
@@ -115,6 +122,7 @@ div .titulo {
 div .titulo h1:hover{
     box-shadow: 10px 0px 30px rgba(163, 163 ,163,1 )
 }
+
 /*Contenido principal----------------------------*/
 article .contenido__articulo{
     display:flex;
@@ -124,8 +132,15 @@ article .contenido__articulo{
 
 .parrafo__presentacion{
     display: absolute;
-    margin-left: 12%;
+    margin:auto;
     width: 80%;
+}
+
+@media (min-width:910px) {
+    .parrafo__presentacion {
+        margin-right: 0;
+        width: 90%;
+    }
 }
 .contenido__articulo p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -139,24 +154,72 @@ img.flotante_desert {
     float: right;
     margin: 2px 3px;
 }
+
 img.flotante_cataratas{
     width: 30%;
     float: left;
     margin: 2px 3px;
 }
+
 .galeria__pais{
     display: flex;    
     flex-direction:column;
-    align-items: flex-end;    
+    align-items: center;    
     grid-area: fotogaleria;
-   
-   
 }
+
 .galeria__pais .imagenes{
     width: 70%;
     float: center;
 }
 
+/*Contenido de las paginas cardinales------*/ 
+
+.contenido_paginas{
+    display: grid;
+    grid-template-columns:auto auto auto;
+    grid-template-areas: "foto lista info"
+}
+#fotos_container{
+    display: flex;
+    grid-area: foto;
+}
+.informacion_ciudades{
+    display: block;
+    grid-area: info;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: #063642;
+    width: 70%;
+    margin-left: 50px;
+}
+.lista_ciudades form{
+    display: block;
+    grid-area: lista;
+    left: 30px;
+    padding-left: 20px;
+}
+.lista_ciudades form p{
+    font-size: medium;
+    color: #fff;
+}
+                
+                
+                
+.container_texto-activo{
+    display: block;
+    
+    padding: 15px;
+}
+.informacion_ciudades h1{
+    color: #C08261;
+    font-size: large;
+    font-weight:bold;
+}
+
+.container_texto-inactivo{
+    display: none;
+}
 
 
 /*Formato del contenido pie de pagina FOOTER*/
@@ -183,7 +246,7 @@ footer li a{
     justify-content: flex-start;  
 }
 
-li a #media_icons{
+li a .icon{
     height: 25px;
 }
 
@@ -222,8 +285,8 @@ footer p{
     position: absolute;
     padding: 2px;
     margin-top: 30px;
-    margin-right: 20px;
-    margin-left: 94%;
+    margin-right: 15px;
+    right: 0;
     border: solid 2px;
 }
 

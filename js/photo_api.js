@@ -45,4 +45,3 @@ function mostrarFotos(photos) {
 // Ejemplo de uso:
 const ciudadElegida = 'tierra del fuego';
 obtenerFotos(ciudadElegida);
-

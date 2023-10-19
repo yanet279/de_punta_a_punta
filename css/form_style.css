@@ -1,7 +1,6 @@
 body{
     background-color: #6096B4;
     margin: 0;
-    box-sizing: border-box;
 }
 
 .encabezado{
@@ -19,12 +18,20 @@ body{
 .logo {
     font-size: 45px;
     font-weight: bold;
-    padding-bottom: 25px;
-    padding-top: 20px;
+    /* padding-bottom: 25px; */
+    padding-top: 10px;
+    text-align: start;
+}
+
+.logo-img {
+    /* border: 1px solid; */
+    width: 280px;
+    margin-left: 15px;
 }
 
 @media (min-width:910px) {
     .logo {
+        text-align: center;
         padding-bottom: 0;
     }
 }
@@ -40,6 +47,7 @@ body{
 .menu ul{
     list-style: none;
     padding: 0 30px;
+    margin-top: 0;
 }
 
 @media (max-width: 910px) {
@@ -327,7 +335,7 @@ footer li a{
     justify-content: flex-start; 
 }
 
-li a #media_icons{
+li a .icon{
     height: 25px;
 }
 
@@ -371,7 +379,8 @@ footer p{
     padding: 2px;
     margin-top: 30px;
     margin-right: 20px;
-    margin-left: 94%;
+    margin-right: 15px;
+    right: 0;
     border: solid 2px;
 }
 
