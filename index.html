@@ -13,8 +13,12 @@
 </head>
 
 <body>
+    
+    <input type="checkbox" id="main-nav-toggle" class="main-nav-toggle">
+
     <div class="contenedor">
         <header class="encabezado">
+            
             <div class="img-1">
                 <img src="./assets/images/istockphoto-973274388-612x612.jpg" alt="obelisco">
             </div>
@@ -36,18 +40,28 @@
                 <img src="./assets/images/1920_caratras-277690.jpg" alt="cataratas">
 
             </div>
-
         </header>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="norte.html">Norte</a></li>
-                <li><a href="sur.html">Sur</a></li>
-                <li><a href="este.html">Este</a></li>
-                <li><a href="oeste.html">Oeste</a></li>
-                <li><a href="formulario.html">Contactanos</a></li>
-            </ul>
-        </nav>
+
+        <div class="menu">
+            <div class="menu-hamburguesa">
+                <label class="hamburguesa-button" for="main-nav-toggle" title="Expandir barra de navegación">
+                    <span class="hamburguesa-button__superior"></span>
+                    <span class="hamburguesa-button__medio"></span>
+                    <span class="hamburguesa-button__inferior"></span>
+                </label>
+            </div> 
+            <div class="logo">De Punta a Punta</div>
+            <nav class="menu-link">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="norte.html">NORTE</a></li>
+                    <li><a href="sur.html">SUR</a></li>
+                    <li><a href="este.html">ESTE</a></li>
+                    <li><a href="oeste.html">OESTE</a></li>
+                    <li><a href="formulario.html">CONTÁCTANOS</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="titulo">
             <h1>Bienvenidos a De Punta a Punta Argentina</h1>
             <p></p>
@@ -99,11 +113,11 @@
                                 alt="icon for twitter" /></a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/"><img class="icon" id="media_icons" src="./assets/facebook.png"
+                        <a href="https://www.facebook.com/"><img class="icon" id="media_icons1" src="./assets/facebook.png"
                                 alt="icon for facebook" /></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/"><img class="icon" id="media_icons" src="./assets/youtube.png"
+                        <a href="https://www.youtube.com/"><img class="icon" id="media_icons2" src="./assets/youtube.png"
                                 alt="icon for youtube" /></a>
                     </li>
                 </ul>
@@ -113,10 +127,7 @@
 
     </div>
 
-
-
-    </header>
-
+    <script src="js/index.js"></script>
 </body>
 
 </html>

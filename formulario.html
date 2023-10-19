@@ -14,15 +14,16 @@
 </head>
 
 <body>
+
+    <input type="checkbox" id="main-nav-toggle" class="main-nav-toggle">
+
     <div class="contenedor">
         <header class="encabezado">
             <div class="img-1">
                 <img src="./assets/images/istockphoto-973274388-612x612.jpg" alt="obelisco">
             </div>
             <div class="img-2">
-                <img src="./assets/images/depositphotos_139020872-stock-photo-road-leading-to-majestic-mount.jpg"
-                    alt="mountain">
-
+                <img src="./assets/images/depositphotos_139020872-stock-photo-road-leading-to-majestic-mount.jpg" alt="mountain">
             </div>
 
             <div class="img-3">
@@ -31,116 +32,122 @@
 
             <div class="img-3">
                 <img src="./assets/images/istockphoto-1013342634-612x612.jpg" alt="salta">
-
             </div>
+
             <div class="img-4">
                 <img src="./assets/images/1920_caratras-277690.jpg" alt="cataratas">
-
             </div>
-
         </header>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="norte.html">Norte</a></li>
-                <li><a href="sur.html">Sur</a></li>
-                <li><a href="este.html">Este</a></li>
-                <li><a href="oeste.html">Oeste</a></li>
-                <li><a href="formulario.html">Contactanos</a></li>
-            </ul>
-        </nav>
-        <div class="titulo">
-            <h1>Formulario de consultas.</h1>
+        
+        <div class="menu">
+            <div class="menu-hamburguesa">
+                <label class="hamburguesa-button" for="main-nav-toggle" title="Expandir barra de navegación">
+                    <span class="hamburguesa-button__superior"></span>
+                    <span class="hamburguesa-button__medio"></span>
+                    <span class="hamburguesa-button__inferior"></span>
+                </label>
+            </div> 
+            <div class="logo">De Punta a Punta</div>
+            <nav class="menu-link">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="norte.html">NORTE</a></li>
+                    <li><a href="sur.html">SUR</a></li>
+                    <li><a href="este.html">ESTE</a></li>
+                    <li><a href="oeste.html">OESTE</a></li>
+                    <li><a href="formulario.html">CONTÁCTANOS</a></li>
+                </ul>
+            </nav>
         </div>
-        <form action="" class="formulario" id="formulario" style="grid-template-columns: auto auto;">
-			<!-- Grupo: Nombre -->
-			<div class="formulario__grupo" id="grupo__nombre">
-				<label for="nombre" class="formulario__label">Nombre </label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-			</div>	
-            <!-- Grupo: Apellido -->
-			<div class="formulario__grupo" id="grupo__apellido">
-				<label for="apellido" class="formulario__label">Apellido </label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Perez">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-			</div>				
 
-			<!-- Grupo: Correo Electronico -->
-			<div class="formulario__grupo" id="grupo__correo">
-				<label for="correo" class="formulario__label">Correo Electrónico</label>
-				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-			</div>
+        <main>
+            <div class="titulo">
+                <h1>Formulario de consultas.</h1>
+            </div>
+            <form action="" class="formulario" id="formulario">
+                <!-- Grupo: Nombre -->
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre </label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                </div>	
+                <!-- Grupo: Apellido -->
+                <div class="formulario__grupo" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido </label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Perez">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                </div>				
 
-			<!-- Grupo: comentario -->
-			<div class="formulario__grupo" id="grupo__comentario">				
-				<label for="comentario" class="formulario__label">Comentario o Sugerencias</label>
-				<div class="formulario__grupo-input">
-					<textarea cols="30" rows="20" class="formulario__input" name="comentario" id="comentario"></textarea>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El comentario no puede estar vacio.</p>
-			</div>
+                <!-- Grupo: Correo Electronico -->
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
 
-			<!-- Grupo: Terminos y Condiciones -->
-			<div class="formulario__grupo" id="grupo__terminos">
-				<label class="formulario__label">
-					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los Terminos y Condiciones
-				</label>
-			</div>
+                <!-- Grupo: comentario -->
+                <div class="formulario__grupo" id="grupo__comentario">				
+                    <label for="comentario" class="formulario__label">Comentario o Sugerencias</label>
+                    <div class="formulario__grupo-input">
+                        <textarea cols="30" rows="20" class="formulario__input" name="comentario" id="comentario"></textarea>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El comentario no puede estar vacio.</p>
+                </div>
 
-			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-			</div>
+                <!-- Grupo: Terminos y Condiciones -->
+                <div class="formulario__grupo" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Terminos y Condiciones
+                    </label>
+                </div>
 
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-			</div>
-		</form>
-	</main>
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                </div>
 
-	<script src="js/formulario.js"></script>
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario__btn">Enviar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                </div>
+            </form>
+        </main>
+
+	    <script src="js/formulario.js"></script>
+	    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
         
 
         <footer class="pie">
             <div id="socialmedia">
                 <ul class="group">
                     <li>
-                        <a href=""><img class="icon" id="media_icons" src="./assets/twitter.png"
+                        <a href=""><img class="icon" id="media_icons-1" src="./assets/twitter.png"
                                 alt="icon for twitter" /></a>
                     </li>
                     <li>
-                        <a href=""><img class="icon" id="media_icons" src="./assets/facebook.png"
+                        <a href=""><img class="icon" id="media_icons-2" src="./assets/facebook.png"
                                 alt="icon for facebook" /></a>
                     </li>
                     <li>
-                        <a href=""><img class="icon" id="media_icons" src="./assets/youtube.png"
-                                alt="icon for youtube" /></a>
+                        <a href=""><img class="icon" id="media_icons-3" src="./assets/youtube.png"
+                                alt="icon for YouTube" /></a>
                     </li>
                 </ul>
-                <p>(c) Realizado por grupo 27. Codo a Codo Comision 23512</p>
+                <p>(c) Realizado por grupo 27. Codo a Codo Comisión 23512</p>
             </div>
         </footer>
 
     </div>
 
-
-
-    </header>
-
 </body>
-
 </html>
