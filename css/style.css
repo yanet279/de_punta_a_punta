@@ -2,6 +2,7 @@ body{
     background-color: #6096B4;
     margin: 0;
 }
+
 h1{
     font-family: 'Kalam', cursive;
 }
@@ -97,6 +98,9 @@ h1{
 
 /*Formato del contenido principal*/
 
+img {
+    vertical-align: baseline;
+}
 .contenedor{
     display: grid;
     grid-template: auto,auto,auto,auto,auto/ auto auto ;
@@ -162,15 +166,38 @@ img.flotante_cataratas{
 }
 
 .galeria__pais{
-    display: flex;    
-    flex-direction:column;
-    align-items: center;    
     grid-area: fotogaleria;
 }
 
-.galeria__pais .imagenes{
-    width: 70%;
-    float: center;
+.pais-imagenes {
+    margin: 30px auto;
+}
+
+.pais-imagenes img {
+    margin: auto;
+    /* max-height: 400px; */
+    min-height: 180px;
+}
+
+@media (min-width: 910px) {
+    #carousel .pais-imagenes {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .imagenes {
+        /* overflow: auto; */
+        display: block;
+        text-align: center;
+        
+    }
+
+    .carousel-indicators,
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
 }
 
 /*Contenido de las paginas cardinales------*/ 
