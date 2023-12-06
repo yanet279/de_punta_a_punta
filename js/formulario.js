@@ -14,7 +14,7 @@ const campos= {
 }
 
 function validaFormulario(e) { 
-   switch (e.target.name){
+    switch (e.target.name){
     case "nombre":
         validarCampo(expresiones.nombre, e.target, 'nombre');
         break;
@@ -66,3 +66,18 @@ formulario.addEventListener('submit', (e)=>{
             
 
 });
+
+
+// Cambia el icono del menu
+const menu = document.querySelector(".checkbtn")
+let flag;
+
+menu.addEventListener('click', ()=>{
+    if(flag==0){
+        menu.innerHTML='<i class="fas fa-bars"></i>'
+        flag=1;
+    }else {
+        menu.innerHTML='<i class="fa-sharp fa-solid fa-x"></i>'
+        flag=0;
+    }
+})

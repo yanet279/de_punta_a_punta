@@ -1,204 +1,583 @@
-body{
-    background-color: #6096B4;
-    
-    
-    
-}
-h1{
-    font-family: 'Kalam', cursive;
-}
-
-/*Estilos del Header*/
-
-
-.encabezado{
-    display: flex;
-    height:90%;
-    grid-area: header;
-    
-}
-.encabezado img{
-    width: 100%;
-    height: 100%;
-}
-
-
-
-
-/*Estilos del Menu*/
-
-.menu{
-    background-color: #93BFCF;
-    text-align: center;    
-    grid-area: inicio;
-    height: 120px;
-   
-   
-}
-.menu ul{
-    list-style: none;
-    padding: 25px;
-
-
-}
-
-.menu ul li{
-    display: inline-block;
-    margin:10px   
-   
-
-}
-
-.menu li a{
-    color: #063642;    
-    text-decoration: none;
-    font-size: 30px;
-    padding: 10px;
-    background-image: url("../assets/icons/icons8-mate-96.png");    
-    background-size:40px;
-    background-repeat: no-repeat;
-    padding-left: 2em; 
-    font-family: 'Kalam', cursive;
-   
-    
-}
-
-
-.menu li a:hover {
-    background-color: #6096B4;
-    font-size: 35px;
-    color: #011318;
-    font-weight: bold;
-    border-radius: 15px;
-    animation: 0.5s infinite menu_opcion;
- }
-
- @keyframes menu_opcion {
-    0%{transform:scaleX(1.0);}
-    50%{transform: scaleX(1.5);}
-    100%{transform: scaleX(1.0);}
-}
-
-
-/*Formato del contenido principal*/
-
-.contenedor{
-    display: grid;
-    grid-template: auto,auto,auto,auto,auto/ auto auto ;
-    grid-template-areas:  "header header"
-                          "inicio inicio"
-                          "titulo titulo"
-                          "contenido fotogaleria"                                                  
-                          "pie pie " ;
-}
-/*Estilos del Titulo*/
-
-div .titulo {
-    display: inline-flex;
-    color: #C08261;
-    background-image: linear-gradient(to bottom, #0a5c71, #063642);
-    border: #063642 2px solid;
-    width: 100%;    
-    justify-content: center;
-    grid-area: titulo;
-    
-}
-div .titulo h1:hover{
-
-    box-shadow: 10px 0px 30px rgba(163, 163 ,163,1 )
-}
-/*Contenido principal----------------------------*/
-article .contenido__articulo{
-    display:flex;
-    grid-area: contenido;
-    width: 40%;
-
-}
-.parrafo__presentacion{
-    display: absolute;
-    margin-left: 12%;
-    width: 100%;
-}
-.contenido__articulo p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    color: #063642;
-}
-
-img.flotante_salinas,
-img.flotante_desert {
-    width: 30%;
-    float: right;
-    margin: 2px 3px;
-}
-img.flotante_cataratas{
-    width: 30%;
-    float: left;
-    margin: 2px 3px;
-}
-.galeria__pais{
-    display: flex;    
-    flex-direction:column;
-    align-items: flex-end;    
-    grid-area: fotogaleria;
-   
-   
-}
-.galeria__pais .imagenes{
-    width: 70%;
-    float: center;
-}
-
-
-
-/*Formato del contenido pie de pagina FOOTER*/
-
-footer {
-    background-image: linear-gradient(to bottom, #0a5c71, #063642);
-    display: flex;
-    text-align:start;
-    align-content: flex-end;
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    grid-area: pie;
-    
+}
+
+body {
+    background-color: #7dd3fc;
+}
+
+h1 {
+    font-family:'Roboto', cursive;
+    margin-top: 0px;
+    font-size: 6vw;
+    margin-top: 22vh;
+    position: absolute;
+    top: 0;
+    left: 8%;
+}
+h2{
+    margin-top: 40px;
+    font-size: 3rem;
+    padding-top: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1,
+h2 {
+    color: white;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ------------------------------------------------- */
+/* ------------   BARRA DE NAVEGACIÓN   ------------ */
+/* ------------------------------------------------- */
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    display: none;
+}
+
+@media (max-width:530px) {
+    .menuHorizontal ul {
+        display: none;
+    }
+
+    .menuHorizontal ul  {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        min-width: 512px;
+        min-height: 200px;
+        background: #0284c7;
+        transition: all .5s;
+        position: absolute;
+        top: -36px;
+        right: -30px;
+        padding: 80px 0 50px;
+    }
+
+    .menuHorizontal ul li {
+        padding: 10px 0;
+    }
+
+    .menuHorizontal ul li:hover {
+        background-color: #fff;
+        color: #0284c7;
+        text-align: center;
+        min-width: 500px;
+        margin: auto;
+    }
+
+    #check:checked ~ .menuHorizontal ul {
+        /* left: 0; */
+        display: flex;
+    }
+    .checkbtn {
+        display: flex;
+        position: absolute;
+        z-index: 2000;
+        right: 22px;
+        top: 20px;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 25px;
+        color: #fff;
+        float: right;
+        line-height: 80px;
+        /* margin-right: 40px; */
+        cursor: pointer;
+    }
+}
+
+
+.menuHorizontal {
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: aliceblue;
+    font-family: roboto; 
+}
+
+
+.menuHorizontal ul {
+    list-style: none;
+}
+
+.menuHorizontal li {
+    float: right;
+    margin: 0 8px;
+}
+
+#background-video {
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* ------------------------------------------------- */
+/* ----------------       MAIN      ---------------- */
+/* ------------------------------------------------- */
+
+
+.mainmenu {
+    float: right;
+    margin-right: 40px;
+}
+
+/* --------- index.html ------------- */
+.titulo_regiones{
+    font-size: 70px;
+}
+
+.regiones {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+
+}
+
+.regiones div {
+    max-width: 33%;
+}
+
+.regiones div img {
+    max-width: 444px;
+    height: 333px;
+    border-radius: 70px 0px 70px 0px;
+    overflow: hidden;
+}
+
+.regiones div p {
+    padding-bottom: 15px;
+    width: 444px;
+}
+
+.linksregiones {
+    text-decoration: none;
+    color: white;
     
 }
 
-footer li{
-    display: inline;
+.linksregiones:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* -------- sur.html, centro.html, norte.html ---------*/
+
+#fotos-container{
+    width: 500px !important;
+    margin: 0 auto;
+}
+#fotos-container img{
+    width: 500px;
+    background-size:contain;
+}
+
+.container_texto{
+    width: 500px;
+    display: none;
+    overflow: hidden;
+    max-width: 90%;
+    margin: auto;
+}
+.contenido_paginas{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.lista_ciudades{
+    margin-top: 50px;
+    text-align: center;
     
 }
-footer li a{
-    padding: 5px;
-    justify-content: flex-start; 
-   
+.lista_ciudades select{
+    cursor: pointer;
+}
+.lista_ciudades p{
+    font-size: 50px;
+    font-weight: bolder;
+    
+}
+.lista_ciudades select{
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    /*border-color: snow;*/
+}
+.container_texto h3{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-style:italic;
 }
 
-li a #media_icons{
-    height: 25px;
+@keyframes menu_opcion {
+    0% {
+        transform: scaleX(1.0);
+    }
+
+    50% {
+        transform: scaleX(1.5);
+    }
+
+    100% {
+        transform: scaleX(1.0);
+    }
 }
 
-footer p{
-    font-size: 12px;
-    color: #fff;
-    margin-left:3px ;
-    align-items: end;
+
+
+/* REGION NORTE */
+
+
+.nombre {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    opacity: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
 }
-/* Implementacion de mediaqueries----------------------------------------------*/
+
+
+.descripcion {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+    top: 50%;
+    transition: opacity 0.3s ease;   
+}
+
+
+.bodyForo{
+    display: flexbox;
+    background-color: #7dd3fc;
+    
+}
+.bodyForo .menuHorizontal{
+    position: relative;
+    justify-content: flex-end;
+}
+
+table .table{
+    margin-top: 10%;
+}
+
 @media screen and (max-width:800px){
-    .contenedor{
+
+    .titulo_secundario{
+        font-size: large;
+        left: 30%; 
+    }
+    .menuHorizontal{
+        display: flex;
+        
+    }
+    .regiones{
+        justify-content: center;
         display: grid;
-        grid-template: auto/ auto ;
-        grid-template-areas: "header "
-                              "inicio "
-                              "titulo "
-                              "contenido "
-                              "fotogaleria "                                                  
-                              "pie  " ;
+        grid-template: auto/auto auto auto;
+        grid-template-areas: "norte"
+                              "centro"
+                              "sur"  ;
+
+    }
+    .regionNorte{
+        display: block;
+        grid-area: norte;
+
+
+    }
+    .regionCentral{
+        display: ruby-base;
+        grid-area: centro;
+
+    }
+    .regionSur{
+        display: block;
+        grid-area: sur;
+    }
+
+    .titulo_regiones{
+        font-size: 30px;
+        
+    }
+    .lista_ciudades p{
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    .contenido_paginas{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        
+        margin-bottom: 20px;
+    }
+
+}  
+
+@media(min-width: 801px) {
+    h1 {
+        position: absolute;
+        top: 12vh;
+        /* font-size: 5vw; */
+    }
+}
+
+
+/* ........  whatsAPP  ........... */
+
+#whatsAppWidget {
+    position: fixed;
+    bottom: 120px; 
+    right: 24px;
+    float: left; 
+    z-index:20;
+    /* margin-bottom: 70px; */
+}
+.whatsApp {
+    float: right; 
+    height: 50px; 
+    width: 50px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4); 
+    text-align: center; 
+    line-height: 50px; 
+    color: white; 
+    background-color: #075985;
+}
+
+/* ....................................... */
+/* ...............  footer  .............. */
+/* ....................................... */
+
+footer {
+    background-color: #0284c7;
+    display: flex;
+    text-align: start;
+    align-content: flex-end;
+    align-items: flex-end;
+    padding-top: 20px;
+    height: 115px;
+    width: 100%;
+    padding: 0;
+    margin-top: auto;
+}
+
+footer p {
+    color: #fff;
+    align-items: end;
+    margin: 0 auto 10px;
+    font-size: 17px;
+}
+
+footer ul {
+    margin: 0 10px 8px 0;
+}
+
+footer li {
+    display: inline;
+    margin: 0 5px;
+}
+
+a:visited {
+    color:aliceblue
+}
+
+
+/* ------------------------------------------------- */
+/* ----------------       FORO      ---------------- */
+/* ------------------------------------------------- */
+
+.bodyForo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.titulo_comentario h2{
+    color: #fff;
+    font-size: 8vw;
+}
+
+.agregar_comentario {
+    text-align: start;
+    margin: 50px 0 40px;
+}
+
+.agregar_comentario a{
+    border-radius: 8px;
+    background-color: #0284c7;
+    text-decoration: none;
+    border: solid 2px  #056291;
+    padding: 8px 20px;
+}
+
+.agregar_comentario a:hover {
+    background-color: #056291;
+}
+
+/* ........  tabla  ........... */
+.tabla {
+    margin: 5px 20px 50px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.tabla th {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.tabla td {
+    font-family:  sans-serif;
+}
+
+
+.boton {
+    height: 28px;
+}
+
+.columna_comentario {
+    min-width: 180px;
+}
+
+
+
+/* ------------------------------------------------- */
+/* ----------------   mediaqueries   --------------- */
+/* ------------------------------------------------- */
+@media (max-width:630px) {
+    
+    .regiones div {
+        margin: auto;
+        overflow: hidden; 
+        max-width:90%;
+    }
+
+    .regiones div img {
+        width: 100%;
+        height: 50vw;
+        display: block;
+        margin: auto;
+    }
+    .tabla {
+        overflow-x: scroll;
+    }
+
+    .tabla::-webkit-scrollbar{
+        border: 2px solid #b4afafb9;
+        background-color: #e5e2e2d2;
+        border-radius: 5px;
+    }
+    .tabla::-webkit-scrollbar-thumb{ 
+        border-radius: 5px;
+        border-bottom: 2px solid #b4afafb9;
+        border-top: 2px solid #b4afafb9;
+        background-color: #0284c7;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    footer p{
+        font-size: 15px;
+    }
+
+    footer .group{
+        margin: auto;
+    }
+
+    #group_foro {
+        padding-bottom: 17px;
+    }
+
+    .icon{
+        height: 35px;
+        width: 35px;
+    }
+
+}
+
+@media (max-width:770px) {
+    .tabla {
+        overflow-x: scroll;
     }
     
+    .tabla::-webkit-scrollbar{
+        border: 2px solid #b4afafb9;
+        background-color: #ffffffe3;
+        border-radius: 5px;
+    }
+    .tabla::-webkit-scrollbar-thumb{ 
+        border-radius: 5px;
+        border-bottom: 2px solid #b4afafb9;
+        border-top: 2px solid #b4afafb9;
+        background-color: #0284c7;
+    }
 
+}
 
+@media (max-width:800px) {
+    .tabla {
+        margin-bottom: 66px;
+    }
+
+    .icon{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (min-width:801px) {
+    /* .regiones {
+        justify-content: space-around;
+    } */
+    .titulo_comentario h2{
+        padding-top: 50px; 
+        font-size: 80px;
+    }
+
+    .tabla {
+        width: 100%;
+        margin: 0 auto 50px;
+        padding: 0 20px 0;
+    }
+
+    footer p{
+        font-size: 20px;
+    }
+
+    .icon{
+        height: 45px;
+        width: 45px;
+    }
 }

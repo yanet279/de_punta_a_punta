@@ -42,7 +42,22 @@ function mostrarFotos(photos) {
     });
 }
 
-// Ejemplo de uso:
-const ciudadElegida = 'tierra del fuego';
-obtenerFotos(ciudadElegida);
 
+
+obtenerFotos("23512grupo27logo1") 
+
+//prueba de la llamada
+var select = document.getElementById("miSelectMultiple");
+ 
+select.addEventListener("change", function(){
+  var selectedOptions = this.selectedOptions;
+  console.log("Options selected: ");
+  for (var i = 0; i < selectedOptions.length; i++) {
+    var valor_elegido =(selectedOptions[i].value)
+        console.log( valor_elegido)
+        obtenerFotos(valor_elegido); 
+
+       }
+   
+});
+        

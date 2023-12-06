@@ -1,159 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    background-color: #6096B4;
-   
+    background: #7dd3fc;
+} 
+
+/* ------------------------------------------------- */
+/* ------------   BARRA DE NAVEGACIÓN   ------------ */
+/* ------------------------------------------------- */
+
+#check {
+    display: none;
 }
 
-
-.encabezado{
-    display: flex;
-    height:90%;
-    grid-area: header;
-    
-}
-.encabezado img{
-    width: 100%;
-    height: 100%;
+.checkbtn {
+    display: none;
 }
 
+@media (max-width:530px) {
+    .menuHorizontal ul {
+        display: none;
+    }
 
+    .menuHorizontal ul  {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        min-width: 512px;
+        min-height: 200px;
+        background: #0284c7;
+        transition: all .5s;
+        position: absolute;
+        top: -36px;
+        right: -30px;
+        padding: 80px 0 50px;
+    }
 
+    .menuHorizontal ul li {
+        padding: 10px 0;
+    }
 
-/*Estilos del Menu*/
+    .menuHorizontal ul li:hover {
+        background-color: #fff;
+        color: #0284c7;
+        text-align: center;
+        min-width: 500px;
+        margin: auto;
+    }
 
-.menu{
-    background-color: #93BFCF;
-    text-align: center;    
-    grid-area: inicio;
-    height: 120px;
-   
-   
+    #check:checked ~ .menuHorizontal ul {
+        /* left: 0; */
+        display: flex;
+    }
+    .checkbtn {
+        display: flex;
+        position: absolute;
+        z-index: 2000;
+        right: 22px;
+        top: 20px;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 25px;
+        color: #fff;
+        float: right;
+        line-height: 80px;
+        /* margin-right: 40px; */
+        cursor: pointer;
+    }
 }
-.menu ul{
+
+.menuHorizontal {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: aliceblue;
+    font-family: roboto; 
+}
+
+.menuHorizontal ul {
     list-style: none;
-    padding: 25px;
-
-
 }
 
-.menu ul li{
-    display: inline-block;
-    margin:10px   
-   
-
-}
-
-.menu li a{
-    color: #063642;    
-    text-decoration: none;
-    font-size: 30px;
-    padding: 10px;
-    background-image: url("../assets/icons/icons8-mate-96.png");    
-    background-size:40px;
-    background-repeat: no-repeat;
-    padding-left: 2em; 
-    font-family: 'Kalam', cursive;
-   
-    
+.menuHorizontal li {
+    float: right;
+    margin: 0 8px;
 }
 
 
-.menu li a:hover {
-    background-color: #6096B4;
-    font-size: 35px;
-    color: #011318;
-    font-weight: bold;
-    border-radius: 15px;
-    animation: 0.5s infinite menu_opcion;
- }
+/* ....................................... */
+/* ...............    main    ............ */
+/* ....................................... */
 
- @keyframes menu_opcion {
-    0%{transform:scaleX(1.0);}
-    50%{transform: scaleX(1.5);}
-    100%{transform: scaleX(1.0);}
-}
-/*Formato del contenido principal*/
 
-.contenedor{
-    display: grid;
-    grid-template: auto,auto,auto,auto,auto/ auto auto ;
-    grid-template-areas: "header header"
-                          "inicio inicio"
-                          "titulo titulo"
-                          "formulario formulario"                                                  
-                          "pie pie " ;
-}
-div .titulo {
+.titulo {
+    margin-top: 100px;
+    width: 800px;
     display: inline-flex;
-    color: #C08261;
-    background-image: linear-gradient(to bottom, #0a5c71, #063642);
-    border: #063642 2px solid;
-    width: 100%;    
+    color: #ffffff;
+    font-size: 3.5vw;
+    width: 100%;
     justify-content: center;
-    grid-area: titulo;
-    
-}
-div .titulo h1:hover{
 
-    box-shadow: 10px 0px 30px rgba(163, 163 ,163,1 )
 }
 
+.contenedor {
+    background: linear-gradient(180deg, #7dd3fc 50%, hsla(200, 98%, 39%, 1) 100%);
+    width: 100%;   
+    margin: 40px auto 0;
+    padding: 30px 0;
+}
 
-
-
-
-/*Estilos del formulario*/
-
-
-.formulario{
+.formulario {
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid #0759854b;
+    width: 80%;
+    padding: 30px 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;    
-    left: 20px;
-    grid-area: formulario;
-    padding-left: 20px;
+    grid-template-columns: 1fr 1fr;
+    background-color: #e0f2fe;
+    box-shadow: 18px 18px 25px -10px rgba(0,0,0,0.45);
 }
-.formulario__label{
+
+.formulario__label {
     display: block;
     font-weight: 700;
-    padding: 10x;
+    padding: 20x;
     cursor: pointer;
-
+    font-size:20px ;
+    color:#000;
+    margin: 0 3%;
 }
-.formulario__grupo-input{
-    display: relative;
-    
-    
 
-}
-.formulario__input{
-    width: 80%;
-    background-color: #fff;
+.formulario__input {
+    width: 90%;
     border: 3px solid transparent;
     border-radius: 3px;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 40px 0 10px;
+    height: 40px;
+    padding-left: 10px;
     transition: 0.3 ease all;
+    background-color: #fff;
+    border: 2px solid #aad1e6af;
+    border-radius: 10px;
+    margin: 0 3%;
 }
-.formulario__grupo #comentario{
-    height: 200px;
 
-}
-
-
-.formulario__input:focus{
-    border:3px solid #020911 ;
+.formulario__input:focus {
+    border: 3px solid #0284c7;
     outline: none;
 }
 
-.formulario__input-error{
+.formulario__grupo #comentario {
+    height: 150px;
+}
+
+.formulario__input-error {
     font-size: 12px;
     margin-bottom: 0;
     display: none;
 }
-.formulario__input-error-activo{
+
+.formulario__input-error-activo {
     display: block;
 }
-.formulario__validacion-estado{
+
+.formulario__validacion-estado {
     display: absolute;
     right: 15px;
     bottom: 15px;
@@ -161,15 +179,46 @@ div .titulo h1:hover{
     font-size: 20px;
     opacity: 0;
 }
-.formulario__checkbox{
+
+
+
+.formulario__checkbox {
     margin-right: 10px;
 }
+
 .formulario__grupo-terminos,
 .formulario__mensaje,
-.formulario__grupo-btn-enviar{
+.formulario__grupo-btn-enviar {
     grid-column: span 2;
 }
-.formulario__mensaje{
+
+
+/* @media (min-width:800px) {
+    .formulario__grupo #comentario {
+        height: 200px;
+    
+    }
+
+    #grupo__comentario {
+        grid-row: 1;
+    }
+    #grupo__nombre {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #grupo__apellido {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 110px;
+    }
+    #grupo__correo {
+        margin-top: 200px;
+        grid-column: 1;
+        grid-row: 1;
+    }
+} */
+
+.formulario__mensaje {
     height: 45px;
     line-height: 45px;
     background-color: #f66060;
@@ -180,25 +229,28 @@ div .titulo h1:hover{
     display: none;
 }
 
-.formulario__mensaje-activo{
+.formulario__mensaje-activo {
     display: block;
 }
 
 .formulario__mensaje p {
     margin: 0;
 }
-.formulario__grupo-btn.enviar{
+
+.formulario__grupo-btn.enviar {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
-.formulario__btn{
+
+.formulario__btn {
     height: 45px;
     line-height: 45px;
     width: 30%;
     margin-top: 5px;
     margin-bottom: 10px;
-    background-color: black;
+    background-color: #0284c7;
     color: #fff;
     font-weight: bold;
     border: none;
@@ -206,92 +258,133 @@ div .titulo h1:hover{
     cursor: pointer;
     transition: 1s ease all;
 }
-.formulario__btn:hover{
-    box-shadow: 25px 0px 50px rgb(8, 43, 241);
-   
+
+.formulario__btn:hover {
+    box-shadow: 25px 0px 50px rgb(1, 0, 1);
+
 }
-.formulario__mensaje-exito{
-    font-size: 15px;
-    color: #5bf846;
+
+.formulario__mensaje-exito {
+    font-size: 24px;
+    color: #f1f3f1;
     display: none;
 }
-.formulario__mensaje-exito-activo{
+
+.formulario__mensaje-exito-activo {
     display: block;
 }
+
 /*Estilos validacion de formulario*/
 
-.formulario__grupo-correcto .formulario__validacion-estado{
+.formulario__grupo-correcto .formulario__validacion-estado {
     color: #5bf846;
     opacity: 1;
 }
-.formulario__grupo-incorrecto .formulario__validacion-estado{
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
     color: #bb2929;
     opacity: 1;
 }
-.formulario__grupo-incorrecto .formulario__input{
+
+.formulario__grupo-incorrecto .formulario__input {
     border: 3px solid #bb2929;
+
+}
+.formulario__grupo .formulario__grupo-btn-enviar{
+    text-align: center;
 }
 
-/*Mediaqueries*/
+.formulario__grupo{
+    margin-top: 20px;
+}
 
-@media screen and (max-width:800px){
+
+
+@media screen and (max-width:800px) {
     .formulario {
-        grid-template-columns: 1fr;
-    }    
-   .formulario__grupo-terminos,
-   .formulario__mensaje,
-   .formulario__grupo-btn-enviar{
-    grid-column: 1;
-}
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-/*Formato del contenido pie de pagina FOOTER*/
+/* ....................................... */
+/* ...............  footer  .............. */
+/* ....................................... */
 
 footer {
-    background-image: linear-gradient(to bottom, #0a5c71, #063642);
+    background-color: #0284c7;
     display: flex;
-    text-align:start;
+    text-align: start;
     align-content: flex-end;
-    margin: 0;
+    align-items: flex-end;
+    padding-top: 20px;
+    height: 115px;
+    width: 100%;
     padding: 0;
-    height: 100%;
-    grid-area: pie;
-    
-    
+    margin-top: auto;
 }
 
-footer li{
-    display: inline;
-    
-}
-footer li a{
-    padding: 5px;
-    justify-content: flex-start; 
-   
-}
-
-li a #media_icons{
-    height: 25px;
-}
-
-footer p{
-    font-size: 12px;
+footer p {
     color: #fff;
-    margin-left:3px ;
     align-items: end;
+    margin: 0 auto 10px;
+    font-size: 17px;
 }
-/* Implementacion de mediaqueries----------------------------------------------*/
-@media screen and (max-width:800px){
-    .contenedor{
-        display: grid;
-        grid-template: auto/ auto ;
-        grid-template-areas: "header "
-                              "inicio "
-                              "titulo "
-                              "formulario"                                                                                
-                              "pie  " ;
+
+footer ul {
+    margin: 0 10px 8px 0;
+}
+
+footer li {
+    display: inline;
+    margin: 0 5px;
+}
+
+a:visited {
+    color:aliceblue
+}
+
+
+
+/* ------------------------------------------------- */
+/* ----------------   mediaqueries   --------------- */
+/* ------------------------------------------------- */
+@media (max-width:630px) {
+    footer {
+        flex-direction: column-reverse;
+        align-items: center;
     }
-    
+
+    footer p{
+        font-size: 15px;
+    }
+
+    footer .group{
+        margin: auto;
+    }
+
+    .icon{
+        height: 35px;
+        width: 35px;
+    }
+}
 
 
+@media (max-width:800px) {
+    .icon{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (min-width:801px) {
+
+    footer p{
+        font-size: 20px;
+    }
+
+    .icon{
+        height: 45px;
+        width: 45px;
+    }
 }
